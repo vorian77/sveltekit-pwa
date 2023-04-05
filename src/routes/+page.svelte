@@ -29,8 +29,8 @@
 		// You can access the original file using image.path, which can be
 		// passed to the Filesystem API to read the raw data of the image,
 		// if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-		var picture = image.webPath;
-		console.log('image url: ', picture);
+		picture = image.webPath;
+		alert(picture);
 
 		// Can be set to the src of an image now
 		//imageElement.src = imageUrl;
@@ -72,7 +72,7 @@
 	</List>
 
 	<Block strong class="flex space-x-4">
-		<Button>Button 10</Button>
+		<Button>Button 10</Button>S
 		<Button>Button 2</Button>
 	</Block>
 
