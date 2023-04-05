@@ -9,12 +9,32 @@
 	import { Page, Navbar, Block, Button, List, ListItem, BlockTitle } from 'konsta/svelte';
 
 	import { Geolocation } from '@capacitor/geolocation';
+	import { Camera, CameraResultType } from '@capacitor/camera';
 
 	let loc = null;
 	async function getCurrentPosition() {
 		const res = await Geolocation.getCurrentPosition();
 		loc = res;
 	}
+
+	let picture = './src/cup.jpg';
+	const takePicture = async () => {
+		const image = await Camera.getPhoto({
+			quality: 90,
+			allowEditing: true,
+			resultType: CameraResultType.Uri
+		});
+
+		// image.webPath will contain a path that can be set as an image src.
+		// You can access the original file using image.path, which can be
+		// passed to the Filesystem API to read the raw data of the image,
+		// if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
+		var picture = image.webPath;
+		console.log('image url: ', picture);
+
+		// Can be set to the src of an image now
+		//imageElement.src = imageUrl;
+	};
 </script>
 
 <!-- <script lang="ts">
@@ -56,12 +76,21 @@
 		<Button>Button 2</Button>
 	</Block>
 
-	<div>
-		<h1>Geolocation</h1>
-		<p>Your location is:</p>
-		<p>Latitude: {loc?.coords.latitude}</p>
-		<p>Longitude: {loc?.coords.longitude}</p>
+	<Block strong>
+		<div>
+			<h1>Geolocation</h1>
+			<p>Your location is:</p>
+			<p>Latitude: {loc?.coords.latitude}</p>
+			<p>Longitude: {loc?.coords.longitude}</p>
 
-		<button on:click={getCurrentPosition}> Get Current Location </button>
-	</div>
+			<button on:click={getCurrentPosition}> Get Current Location </button>
+		</div>
+	</Block>
+
+	<Block strong>
+		<div>
+			<button on:click={takePicture}> Take picture </button>
+			<img class="fit-picture" src={picture} alt="pic from camera" />
+		</div>
+	</Block>
 </Page>

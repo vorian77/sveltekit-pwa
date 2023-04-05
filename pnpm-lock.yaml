@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@capacitor/camera':
+    specifier: ^4.1.4
+    version: 4.1.4(@capacitor/core@4.7.3)
   '@capacitor/cli':
     specifier: ^4.7.3
     version: 4.7.3
@@ -80,6 +83,14 @@ devDependencies:
     version: 3.2.4
 
 packages:
+
+  /@capacitor/camera@4.1.4(@capacitor/core@4.7.3):
+    resolution: {integrity: sha512-7f4n7PlnstYsdGyxc0Kc4hIyS6csFLOjXvffm7pJsuy9pSo+kfdOPdYgGg360QwbUAmA+Yv+J1ZW1eFIwgvWrQ==}
+    peerDependencies:
+      '@capacitor/core': ^4.0.0
+    dependencies:
+      '@capacitor/core': 4.7.3
+    dev: false
 
   /@capacitor/cli@4.7.3:
     resolution: {integrity: sha512-/9Vjl0A91UjRA0b8a5YCqHfHcM50vQ3Fh0typ3ScwYZhg3shkFtB03e8liAD/u0rhr/MerN8VGgN75QNEXN0Lg==}

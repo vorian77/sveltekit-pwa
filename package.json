@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@capacitor/camera": "^4.1.4",
 		"@capacitor/cli": "^4.7.3",
 		"@capacitor/core": "^4.7.3",
 		"@capacitor/geolocation": "^4.1.0",
