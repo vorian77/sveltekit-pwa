@@ -34,6 +34,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@capacitor/cli": "^4.7.3",
+		"@capacitor/core": "^4.7.3",
+		"@capacitor/geolocation": "^4.1.0",
+		"@capacitor/ios": "^4.7.3",
 		"@tauri-apps/api": "^1.2.0",
 		"konsta": "^1.0.2"
 	}
