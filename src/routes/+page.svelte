@@ -44,7 +44,7 @@
 	</List>
 
 	<Block strong class="flex space-x-4">
-		<Button>Button 1</Button>
-		<Button>Button 2</Button>
+		<Button>Button 10</Button>
+		<Button>Button 20</Button>
 	</Block>
 </Page>
