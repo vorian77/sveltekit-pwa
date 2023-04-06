@@ -1,3 +1,9 @@
+// <!-- {
+//   "svelte.plugin.svelte.compilerWarnings": {
+//     "a11y-click-events-have-key-events": "ignore"
+//   }
+// } -->
+
 //import adapter from '@sveltejs/adapter-static';
 import adapter from '@sveltejs/adapter-auto'
 //import { vitePreprocess } from '@sveltejs/kit/vite';

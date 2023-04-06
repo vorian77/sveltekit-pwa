@@ -42,7 +42,6 @@
 		"@capacitor/ios": "^4.7.3",
 		"@ionic/core": "^7.0.1",
 		"@tauri-apps/api": "^1.2.0",
-		"ionic-svelte": "^0.5.72",
-		"konsta": "^1.0.2"
+		"ionic-svelte": "^0.5.72"
 	}
 }

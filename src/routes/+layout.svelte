@@ -1,14 +1,8 @@
-<!-- <App safeAreas theme="ios">
-	<slot />
-</App> -->
 <script lang="ts">
-	// here your menu component
-	// import Menu from "...";
-	import { setupIonicBase } from 'ionic-svelte';
-	/* Call Ionic's setup routine */
-	setupIonicBase();
-	/* Theme variables */
-	import '../theme/variables.css';
+	import { APP_NAME, APP_DESCRIPTION } from '$lib/constants' // here your menu component
+	import { setupIonicBase } from 'ionic-svelte'
+	setupIonicBase()
+	import '$lib/theme/variables.css'
 	/*
 		The next command loads and registers all Ionic Webcomponents for you to use.
 		This adds at least >800kb (uncompressed) to your bundle.
@@ -21,44 +15,14 @@
 		
 	    import 'ionic-svelte/components/ion-app';
 	*/
-	import 'ionic-svelte/components/all';
-</script>
-
-<!-- <script>
-	import '../app.css';
-</script>
-
-<slot /> -->
-<!-- <script>
-	import '../app.css';
-	import { App } from 'konsta/svelte';
-</script> -->
-
-<!-- <script>
-	import '../app.css';
-	import { APP_NAME } from '$lib/constants';
-	import { App } from 'konsta/svelte';
-
-	/* disable right click */
-	// document.addEventListener('contextmenu', (event) => event.preventDefault());
+	import 'ionic-svelte/components/all'
 </script>
 
 <svelte:head>
 	<title>{APP_NAME}</title>
-	<meta name="description" content={APP_NAME} />
+	<meta name="description" content={APP_DESCRIPTION} />
 </svelte:head>
 
-<App theme="ios">
-	<slot />
-</App> -->
-
-
-
 <ion-app>
-	<ion-split-pane content-id="main">
-		<!-- <Menu /> -->
-		<div class="ion-page" id="main">
-			<slot />
-		</div>
-	</ion-split-pane>
+	<slot />
 </ion-app>
