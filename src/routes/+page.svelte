@@ -1,3 +1,18 @@
+<!-- {
+  "svelte.plugin.svelte.compilerWarnings": {
+    "a11y-click-events-have-key-events": "ignore"
+  }
+} -->
+<script>
+	import { Geolocation } from '@capacitor/geolocation';
+
+	let loc = null;
+	async function getCurrentPosition() {
+		const res = await Geolocation.getCurrentPosition();
+		loc = res;
+	}
+</script>
+
 <!-- <h1 class="text-3xl font-bold underline">Hello world!</h1>
 
 <style lang="postcss">
@@ -5,7 +20,7 @@
 		background-color: theme(colors.gray.100);
 	}
 </style> -->
-<script>
+<!-- <script>
 	import { Page, Navbar, Block, Button, List, ListItem, BlockTitle } from 'konsta/svelte';
 
 	import { Geolocation } from '@capacitor/geolocation';
@@ -35,7 +50,7 @@
 		// Can be set to the src of an image now
 		//imageElement.src = imageUrl;
 	};
-</script>
+</script> -->
 
 <!-- <script lang="ts">
 	import { Page, Navbar, Block, Button, List, ListItem, BlockTitle } from 'konsta/svelte';
@@ -59,7 +74,7 @@
 	</Block>
 </Page> -->
 
-<Page>
+<!-- <Page>
 	<Navbar title="My App" />
 
 	<Block strong>
@@ -89,14 +104,41 @@
 
 	<Block strong>
 		<div>
-			<Button onClick={takePicture}>Take picture</Button>
+			<Button onClick={takePicture}>Take picture1</Button>
 			<img class="fit-picture" src={picture} alt="pic from camera" />
 		</div>
 	</Block>
-</Page>
+</Page> -->
 
-<!-- {
-  "svelte.plugin.svelte.compilerWarnings": {
-    "a11y-click-events-have-key-events": "ignore"
-  }
-} -->
+<ion-header translucent="true">
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button />
+		</ion-buttons>
+		<ion-buttons slot="end"> A button </ion-buttons>
+		<ion-title>Card</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+	<ion-button>Default1</ion-button>
+	<ion-button disabled="true">Disabled</ion-button>
+
+	<ion-card>
+		<ion-card-header>
+			<ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+			<ion-card-title>Card Title</ion-card-title>
+		</ion-card-header>
+
+		<ion-card-content>
+			Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or
+			spend a week in the woods. Wash your spirit clean.
+		</ion-card-content>
+	</ion-card>
+	<h1>Geolocation</h1>
+	<p>Your location is:</p>
+	<p>Latitude: {loc?.coords.latitude}</p>
+	<p>Longitude: {loc?.coords.longitude}</p>
+
+	<button on:click={getCurrentPosition}> Get Current Location </button>
+</ion-content>
