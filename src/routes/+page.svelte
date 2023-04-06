@@ -72,7 +72,7 @@
 	</List>
 
 	<Block strong class="flex space-x-4">
-		<Button>Button 10</Button>S
+		<Button>Button 1</Button>
 		<Button>Button 2</Button>
 	</Block>
 
@@ -89,8 +89,14 @@
 
 	<Block strong>
 		<div>
-			<button on:click={takePicture}> Take picture </button>
+			<Button onClick={takePicture}>Take picture</Button>
 			<img class="fit-picture" src={picture} alt="pic from camera" />
 		</div>
 	</Block>
 </Page>
+
+<!-- {
+  "svelte.plugin.svelte.compilerWarnings": {
+    "a11y-click-events-have-key-events": "ignore"
+  }
+} -->

@@ -26,8 +26,6 @@
 	<slot />
 </App> -->
 
-
-
-<App theme="ios">
+<App safeAreas theme="ios">
 	<slot />
 </App>
