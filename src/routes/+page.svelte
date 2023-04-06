@@ -4,29 +4,24 @@
   }
 } -->
 <script>
-	import { Geolocation } from '@capacitor/geolocation';
-	import { Camera, CameraResultType } from '@capacitor/camera';
+	import { Geolocation } from '@capacitor/geolocation'
+	import { Camera, CameraResultType } from '@capacitor/camera'
 
-	let loc = null;
+	let loc = null
 	async function getCurrentPosition() {
-		const res = await Geolocation.getCurrentPosition();
-		loc = res;
+		const res = await Geolocation.getCurrentPosition()
+		loc = res
 	}
 
-	let picture = './src/cup.jpg';
+	let picture = './src/cup.jpg'
 	const takePicture = async () => {
 		const image = await Camera.getPhoto({
 			quality: 90,
 			allowEditing: true,
 			resultType: CameraResultType.Uri
-		});
-
-		// image.webPath will contain a path that can be set as an image src.
-		// You can access the original file using image.path, which can be
-		// passed to the Filesystem API to read the raw data of the image,
-		// if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-		picture = image.webPath;
-	};
+		})
+		picture = image.webPath
+	}
 </script>
 
 <ion-content fullscreen>
